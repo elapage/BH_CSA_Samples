@@ -20,8 +20,8 @@ public class CardDriver
         card2.flipCard();
         numBlackSuits = countBlackSuitedCards(card2, numBlackSuits);
 
-        card1.printCardInformation();
-        card2.printCardInformation();
+        System.out.println(card1.toString());
+        System.out.println(card2.toString());
         System.out.println("There are  " + numBlackSuits + " black suited cards");
         System.out.println("We have created " + Card.getCardCount() + " cards");
         //practice: make another instance of Card

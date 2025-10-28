@@ -36,22 +36,25 @@ public class Card
     }
 
     /**
-     * Prints the SUIT/RANK if facing up; will print
-     * -- if facing down
-     * This is kind of an accessor?
+     * Change this to a toString() method that returns the string of what we
+     * would like displayed if the object needs to be displayed
      */
-    public void printCardInformation()
+    public String toString()
     {
+        String result = "";
+
         //check if the card is facing up
         if(isUp)
         {
-            System.out.println(suit + "/" + rank);
+            result = suit + "/" + rank;
         }
         else
         {
-            System.out.println("--");
+            result = "--";
         }
-    }//end printCardInformation
+
+        return result;
+    }
 
     /**
      * changes the state of the card from facing down to up
@@ -80,6 +83,8 @@ public class Card
         //for values 2-10, the rankValue is just the number (as a String)
         //A 1 is an A
         //Values 11-13 are J, Q, and K respectively.
+
+        return rankValue;
     }
 
     /**
