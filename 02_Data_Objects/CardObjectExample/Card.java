@@ -7,6 +7,10 @@
 
 public class Card
 {
+    //class variables
+    private static final String BLACK_SUITS = "CS";
+    private static int cardCount = 0;
+
     //define instance variables (properties) (global scope)
     private int rank;   //1-13, A's low
     private char suit;    //'H', 'D', 'S', 'C'
@@ -22,6 +26,13 @@ public class Card
         //parameter
         this.rank = rank;
         this.suit = suit;
+
+        cardCount++;
+    }
+
+    public static int getCardCount()
+    {
+        return cardCount;
     }
 
     /**
@@ -100,6 +111,25 @@ public class Card
         }
 
         return result;
+    }
+
+    /**
+     * Returns true if black suit, false if red suit
+     * @return see above
+     */
+    public boolean isBlackSuit()
+    {
+        String strSuit = "" + suit;
+        // if(BLACK_SUITS.indexOf(strSuit) >= 0)
+        // {
+        //     return true;
+        // }
+        // else
+        // {
+        //     return false;
+        // }
+
+        return (BLACK_SUITS.indexOf(strSuit) >= 0);
     }
 
 }

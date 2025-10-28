@@ -12,12 +12,18 @@ public class CardDriver
         Card card1 = new Card(11, 'H');
         Card card2 = new Card(1, 'S');
 
+        int numBlackSuits = 0;
+
         card1.flipCard();
+        numBlackSuits = countBlackSuitedCards(card1, numBlackSuits);
+
         card2.flipCard();
+        numBlackSuits = countBlackSuitedCards(card2, numBlackSuits);
 
         card1.printCardInformation();
         card2.printCardInformation();
-
+        System.out.println("There are  " + numBlackSuits + " black suited cards");
+        System.out.println("We have created " + Card.getCardCount() + " cards");
         //practice: make another instance of Card
         // compare the two cards in the executable
         //suit preference - (highest to lowest) S, H, D, C
@@ -34,5 +40,13 @@ public class CardDriver
             System.out.println("Card 2 wins");
         }
         
+    }
+
+    public static int countBlackSuitedCards(Card card, int currCount)
+    {
+        if(card.isBlackSuit())
+            currCount++;
+
+        return currCount;
     }
 }
