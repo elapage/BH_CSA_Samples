@@ -72,9 +72,14 @@ public class Card
         return suit;
     }
 
-    public int getRank()
+    //changes made so that rank gets the actual rank, not the value we use
+    public String getRank()
     {
-        return rank;
+        String rankValue = "";
+
+        //for values 2-10, the rankValue is just the number (as a String)
+        //A 1 is an A
+        //Values 11-13 are J, Q, and K respectively.
     }
 
     /**
