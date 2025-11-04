@@ -21,7 +21,7 @@ public class CardDriver
         numBlackSuits = countBlackSuitedCards(card2, numBlackSuits);
 
         System.out.println(card1.toString());
-        System.out.println(card2.toString());
+        System.out.println(card2);
         System.out.println("There are  " + numBlackSuits + " black suited cards");
         System.out.println("We have created " + Card.getCardCount() + " cards");
         //practice: make another instance of Card
@@ -33,11 +33,11 @@ public class CardDriver
         //check
         if(card1.compareTo(card2))
         {
-            System.out.println("Card 1 wins");
+            System.out.println(card1.toString() + " wins");
         }
         else
         {
-            System.out.println("Card 2 wins");
+            System.out.println(card2.toString() + " wins");
         }
         
     }

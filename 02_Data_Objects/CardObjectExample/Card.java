@@ -84,6 +84,8 @@ public class Card
         //A 1 is an A
         //Values 11-13 are J, Q, and K respectively.
 
+
+
         return rankValue;
     }
 
