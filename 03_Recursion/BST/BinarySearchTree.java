@@ -4,6 +4,7 @@ public class BinarySearchTree
 
     public BinarySearchTree()
     {
+        //nothing has been added yet; bst is empty
         root = null;
     }
 
@@ -13,12 +14,52 @@ public class BinarySearchTree
      */
     public void add(int data)
     {
+        Node newNode = new Node(data);
+
+        //is the tree empty?
+        if(root == null)
+        {
+            root = newNode;
+        }
+        else
+        {
+            //not empty
+            add(newNode, root);
+        }
     }
 
-
-    private void add(Node newNode, Node currNode)
+    private void add(Node newNode, Node currentNode)
     {
-
+        //check which side to add (either left or right)
+        //by comparing the data of each node
+        if(newNode.getData() > currentNode.getData())
+        {
+            //go to the right
+            if(currentNode.getRight() == null)
+            {
+                currentNode.setRight(newNode);
+            }
+            else
+            {
+                //same steps by with right child as current
+                //node
+                add(newNode, currentNode.getRight());
+            }
+        }
+        else if(newNode.getData() < currentNode.getData())
+        {
+            //go to the left
+            if(currentNode.getLeft() == null)
+            {
+                //no left child, add the new node to the left
+                currentNode.setLeft(newNode);
+            }
+            else
+            {
+                //add new node using the left child as the current node
+                add(newNode, currentNode.getLeft());
+            }
+        }
     }
 
 

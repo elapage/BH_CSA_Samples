@@ -9,6 +9,10 @@ public class Node
 
     public Node(int data)
     {
+        this.data = data;
+        //left and right nodes are empty
+        left = null;
+        right = null;
     }
 
     public int getData()

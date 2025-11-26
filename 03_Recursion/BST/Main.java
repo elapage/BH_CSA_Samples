@@ -16,7 +16,14 @@ public class Main {
         bst.add(3);
         bst.add(37);
         bst.add(714);
-        bst.add(7);
+        bst.add(33);
+        bst.add(109);
+        bst.add(67);
+        bst.add(84);
+        bst.add(15);
+        bst.add(812);
+        bst.add(601);
+        bst.add(5);
 
         bst.print();
     }
