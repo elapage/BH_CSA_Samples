@@ -60,8 +60,18 @@ public class Fibonacci
 
     public static long itFib(int term)
     {
+        long prev = 1;
+        long curr = prev;
 
-        
+        for(int n = 3; n <= term; n++)
+        {
+            long temp = curr;
+            curr += prev;
+            prev = temp;
+        }
+
+
+        return curr;
     }
 
 
@@ -76,6 +86,19 @@ public class Fibonacci
 
     public static long reFib(int term)
     {
+        long result;
 
+        //first two terms are 1
+        if(term <= 2)
+        {
+            result = 1;
+        }
+        else
+        {
+            //the result is the sum of the previous two terms
+            result = reFib(term - 1) + reFib(term - 2);
+        }
+
+        return result;
     }
 }
