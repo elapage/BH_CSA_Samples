@@ -37,7 +37,20 @@ public class ArrayListExample
         //print the names, 1 per line
         removalAlgorithmMoreBetter(names);
 
-        System.out.println(names);
+        printNames(names);
+    }
+
+    /**
+     * prints the names, one name per line
+     * @param names list of names
+     */
+    public static void printNames(ArrayList<String> names)
+    {
+        System.out.println("People in our class:");
+        for(String name : names)
+        {
+            System.out.println(name);
+        }
     }
 
     /**
