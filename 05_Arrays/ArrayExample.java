@@ -8,12 +8,14 @@ public class ArrayExample
     public static void main(String[] args)
     {
         int [] numbers = createArray();
+        int changeNumber = 22;
 
         printArray(numbers);
 
-        changeArrayValues(numbers, 22);
-
+        changeArrayValues(numbers, changeNumber);
+        System.out.println("----------");
         printArray(numbers);
+        System.out.println(changeNumber);
     }
 
     public static int [] createArray()
@@ -32,15 +34,25 @@ public class ArrayExample
         return numbers;
     }
 
+    /**
+     * Change each value by adding the changeVal
+     * @param numbers   the array to change
+     * @param changeVal the number to add to all the values
+     */
     public static void changeArrayValues(int [] numbers, int changeVal)
     {
-
-        // to be completed in class
-
+        for(int i = 0; i < numbers.length; i++)
+        {
+            numbers[i] += changeVal;
+        }
+        changeVal *= 100;
     }
 
     public static void printArray(int [] numbers)
     {
-        // to be completed in class
+       for(int value : numbers)
+        {
+            System.out.println(value);
+        }
     }
 }
