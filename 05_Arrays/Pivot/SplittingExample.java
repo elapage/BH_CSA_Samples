@@ -15,7 +15,7 @@ public class SplittingExample
         {
             Scanner scanner = new Scanner(new File("input.txt"));
             String input = scanner.nextLine();
-            int numberOfCases = Integer.praseInt(input);
+            int numberOfCases = Integer.parseInt(input);
 
             for(int caseNum = 1; caseNum <= numberOfCases; caseNum++)
             {
@@ -40,6 +40,26 @@ public class SplittingExample
      */
     public static void runCase(int caseNum, Scanner scanner)
     {
+        String input;
+        String [] splitValues;
+        int numberElements, pivot;
+        int [] data;
+
+        //get the first line - # of elements in list followed by the pivot
+        input = scanner.nextLine();
+
+        splitValues = input.trim().split(" ");
+        //splitValues = input.split("\\s+");    //all spaces
+        numberElements = Integer.parseInt(splitValues[0]);
+        pivot = Integer.parseInt(splitValues[1]);
+
+        //get second line - data
+        input = scanner.nextLine();
+        data = getData(input, numberElements);
+
+        System.out.println("-CASE " + caseNum + "-");
+        //split and print the list
+        splitList(data, pivot);
     }
 
     /**
@@ -65,8 +85,22 @@ public class SplittingExample
      */
     public static int[] getData(String line, int size)
     {
+        String [] dataValues;
+        int [] data = new int[size];
+        int index = 0;
 
-        return null;
+        dataValues = line.trim().split(" ");
+
+        for(String value : dataValues)
+        {
+            if(index < data.length)
+            {
+                data[index] = Integer.parseInt(value);
+            }
+            index++;
+        }
+
+        return data;
     }
 
     /**
@@ -76,6 +110,24 @@ public class SplittingExample
      */
     public static void splitList(int[] values, int pivot)
     {
+        ArrayList<Integer> smallerThanPivot = new ArrayList<Integer>();
+        ArrayList<Integer> largerThanPivot = new ArrayList<Integer>();
+
+        for(int i = 0; i < values.length; i++)
+        {
+            if(values[i] <= pivot)
+            {
+                smallerThanPivot.add(values[i]);
+            }
+            else
+            {
+                largerThanPivot.add(values[i]);
+            }
+        }
+
+        printList(smallerThanPivot);
+        printList(largerThanPivot);
+
     }
     
 }
