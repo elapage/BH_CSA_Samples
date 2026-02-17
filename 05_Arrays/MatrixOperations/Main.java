@@ -47,7 +47,13 @@
 
     public static void initialize(int [][] array)
     {
-        //complete!
+        for(int r = 0; r < array.length; r++)
+        {
+            for(int c = 0; c < array[r].length; c++)
+            {
+                array[r][c] = (int)(Math.random() * 20 + 1);
+            }
+        }
     }
 
     /**
@@ -56,18 +62,45 @@
 
     public static void print(int [][] array)
     {
-        //complete!
+        for(int [] row : array) //each array (row)
+        {
+            for(int element : row)  //each element in each row
+            {
+                System.out.print(element + "\t");
+            }
+            System.out.println("");
+        }
     }
 
     /**
      * add two matrices of the same width and height
+     * PRE-CONDITION - both a and b are rectangular arrays
      * @param a first array
      * @param b second array
      */
 
     public static int [][] addMatrices(int [][] a, int [][]b)
     {
-        //complete!
+        int [][] newArray = null;
+        //check to see if the matrices are the same width
+        //and height
+        if(a.length == b.length && a[0].length == b[0].length)
+        {
+            newArray = new int[a.length][a[0].length];
+
+            for(int r = 0; r < a.length; r++)
+            {
+                for(int c = 0; c < a[r].length; c++)
+                {
+                    newArray[r][c] = a[r][c] + b[r][c];
+                }
+            }
+
+            
+        }
+        
+        return newArray;
+        
     }
 
     /**
@@ -79,6 +112,7 @@
     public static int [][] copy(int [][] matrix)
     {
         //complete!
+        return null;
     }
 
     /**
@@ -92,6 +126,7 @@
      public static int [][] scalarMultiplication(int [][] matrix, int scalar)
      {
         //complete!
+        return null;
      }
 
     /**
@@ -103,5 +138,6 @@
     public static int [][] transpose(int [][] a)
     {
         //complete!
+        return null;
     }
  }
